@@ -1,0 +1,12 @@
+---
+layout: layouts/base.vto
+title: Crocss
+---
+
+<h1>Crocss</h1>  
+
+<section class="crocs-thumbnails">
+  {{ for item of crocs }}
+    {{ await comp.thumbnail({ imageUrl: item.imageUrl, name: item.name }) }}
+  {{ /for }}
+</section>

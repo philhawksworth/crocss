@@ -1,0 +1,26 @@
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.crocs-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.crocs-thumbnails img {
+  display: inline-block;
+  width: 10%;
+  height: auto;
+  object-fit: cover;
+}
