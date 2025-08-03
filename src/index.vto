@@ -3,10 +3,10 @@ layout: layouts/base.vto
 title: Crocss
 ---
 
-<h1>Crocss</h1>  
+<p>Crocs come in so many colours! Can you guess their hex codes?</p>
 
 <section class="crocs-thumbnails">
   {{ for item of crocs }}
-    {{ await comp.thumbnail({ imageUrl: item.imageUrl, name: item.name }) }}
+    {{ comp.thumbnail({ imageUrl: item.imageUrl, name: item.name }) }}
   {{ /for }}
 </section>

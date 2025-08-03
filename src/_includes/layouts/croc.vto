@@ -2,14 +2,14 @@
 layout: layouts/base.vto
 ---
 
-<a href="/">Back to all crocs</a>
 <h1>{{ name }}</h1>
 <img src="{{ imageUrl }}" alt="{{ name }}">
+
 
 {{# example set of colour guesses #}}
 {{ set entries = ["#333399", "#444499", "#555599", "#666699", "#777799", "#888899", "#999999", "#AAAA99", "#BBBB99", "#CCCC99"] }}
 <section class="swatch-items">
   {{ for item of entries }}
-    {{ await comp.swatchItem({ color: item }) }}
+    {{ comp.swatch({ color: item }) }}
   {{ /for }}
 </section>
