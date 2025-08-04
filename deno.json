@@ -5,9 +5,9 @@
     "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.11/jsx-runtime.ts"
   },
   "tasks": {
-    "build": "deno run --allow-read --allow-write build.ts",
-    "start": "deno run --watch --allow-read --allow-write --allow-net --allow-env main.ts",
-    "serve": "deno run --allow-read --allow-net --allow-env main.ts"
+    "build": "deno run --allow-read --allow-write --env build.ts",
+    "start": "deno run --watch --allow-read --allow-write --allow-net --allow-env  --env main.ts",
+    "serve": "deno run --allow-read --allow-net --allow-env  --env main.ts"
   },
   "compilerOptions": {
     "types": [

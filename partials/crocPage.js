@@ -7,11 +7,16 @@ const swatch = (color) => {
   `
 }
 
-export default function Layout({ content, name, imageUrl }) {
+export default function Layout({ content, name, imageUrl, slug, colors, guess }) {
   return `
   <h1>${ name }</h1>
   <img src="/${ imageUrl }" alt="${ name }">  
+  <form action="/croc/${ slug }" method="post">
+    <input type="text" name="colour" placeholder="Enter a colour">
+    <button type="submit">Submit</button>
+  </form>
+  ${ guess ? `<p>Your guess: ${ guess }</p>` : '' }
   <section class="swatch-items">
-    ${ entries.map(swatch).join('') }
+    ${ colors.map(swatch).join('') }
   </section>`
 }
