@@ -1,4 +1,4 @@
-export default function Layout({ content }) {
+export default function Layout({ content, themeColor }) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -14,8 +14,11 @@ export default function Layout({ content }) {
       <body>
         <header>
           <h1><a href="/">Crocss</a></h1>
+          <p>Can you guess the hex code for these Crocs?</p>
         </header>
-        ${ content }
+        <main>
+          ${ content }
+        </main>
         <footer>
           <p>hosted by <a href="https://deno.com/deploy">Deno Deploy</a></p>
         </footer>

@@ -1,4 +1,3 @@
-const entries = ["#333399", "#444499", "#555599", "#666699", "#777799", "#888899", "#999999", "#AAAA99", "#BBBB99", "#CCCC99"];
 const swatch = (color) => {
   return `
     <div class="swatch-item" style="background-color: ${ color }">
@@ -9,13 +8,15 @@ const swatch = (color) => {
 
 export default function Layout({ content, name, imageUrl, slug, colors, guess }) {
   return `
-  <h1>${ name }</h1>
-  <img src="/${ imageUrl }" alt="${ name }">  
+  <h2> This Croc is <span class="croc-name">${ name }</span> but what is its hex value?</h2>
+  <div class="hero-image">
+    <img src="/${ imageUrl }" alt="${ name }" class="crocs-hero-image">  
+  </div>
+  ${ guess ? `<p>Your guess: ${swatch(guess)}</p>` : '' }
   <form action="/croc/${ slug }" method="post">
-    <input type="text" name="colour" placeholder="Enter a colour">
-    <button type="submit">Submit</button>
+      <input type="text" name="colour" id="hex" placeholder="Guess the hex color">
+      <button type="submit">Submit</button>
   </form>
-  ${ guess ? `<p>Your guess: ${ guess }</p>` : '' }
   <section class="swatch-items">
     ${ colors.map(swatch).join('') }
   </section>`

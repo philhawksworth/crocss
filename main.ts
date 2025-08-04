@@ -6,8 +6,9 @@ import crocs from "./crocs.json" with { type: "json" };
 import { Pool } from "npm:pg";
 
 const pool = new Pool();
+const app = new Hono();
 
-// This runs against the correct database for each environment
+// Ensure the DB strcutre in all environments is correct
 await pool.query(`
   CREATE TABLE IF NOT EXISTS entries (
     id SERIAL PRIMARY KEY,
@@ -15,6 +16,7 @@ await pool.query(`
     color VARCHAR(7)
   )
 `);
+
 
 const listing = (crocs: any[]) => {
   return `
@@ -30,7 +32,7 @@ const listing = (crocs: any[]) => {
 `;
 }
 
-// Populate a page for a croc
+// Populate a page for a croc with the colours guessed so far
 const getCrocPage = async (name: string, guess?: string) => {
   const data = crocs.find(c => c.slug === name);
   const result = await pool.query("SELECT * FROM entries WHERE path = $1", [name]);
@@ -38,7 +40,7 @@ const getCrocPage = async (name: string, guess?: string) => {
   return CrocsPage({ name: data.name, imageUrl: data.url, slug: name, colors: colors, guess: guess });
 }
 
-const app = new Hono();
+
 
 // Static assets
 app.use('/public/*', serveStatic({ root: './' }))
@@ -50,7 +52,7 @@ app.get('/', async (c) => {
 
 // view a crocs page
 app.get('/croc/:name', async (c) => {
-  const name = `${c.req.param('name')}` // render the page
+  const name = `${c.req.param('name')}` 
   const html = await getCrocPage(name);
   return c.html(Layout({ content: html }));
 });
@@ -62,12 +64,21 @@ app.post('/croc/:name', async (c) => {
 
   //insert the colour into the DB
   const body = await c.req.parseBody();
-  const colour = body['colour'];
+  let colour = body['colour'];
+  
+  // Ensure the colour is a valid hex code
+  if (colour.charAt(0) !== '#') {
+    colour = '#' + colour;
+  }
+  if (!colour.match(/^#([0-9a-fA-F]{6})$/)) {
+    return c.html(Layout({ content: `Invalid colour: ${colour}` }));
+  }
+
   const result = await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [name, colour]);
   
   // View the page
   const html = await getCrocPage(name, colour);
-  return c.html(Layout({ content: html }));
+  return c.html(Layout({ content: html, themeColor: colour }));
 });
 
 Deno.serve(app.fetch);
