@@ -4,11 +4,42 @@ body {
   text-align: center;;
 }
 
-main {
+main, header, footer {
   width: 80%;;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2em auto;
+  padding: 2em 0;
 }
+
+header {
+  border-bottom: 1px solid #ddd;
+  margin-top: 1em;
+  padding-bottom: 3em;
+}
+main {
+  padding: 2em 0;
+}
+
+section ,
+section p{
+  text-align: center;
+}
+
+
+
+footer {
+  border-top: 1px solid #eee;
+  padding-top: 4em;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+h1, h2 {
+  line-height: 1.5;
+}
+
 
 .crocs-thumbnails {
   display: flex;
@@ -23,6 +54,7 @@ main {
   background-color: #eee;
   border-radius: 4px;
   padding: 0.25em 0.5em;
+  white-space: nowrap;
 }
 
 .hero-image {
@@ -41,16 +73,39 @@ main {
 .swatch-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
-.swatch-item {
-  min-width: 8rem;
-  height: 4rem;
+a.swatch-item {
+  min-width: 10rem;
+  height: 5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+div.guess a.swatch-item {
+  cursor: default;
+}
+
+a.swatch-item .swatch-item__value {
+  display: none;
+  background-color: #00000066;
+  color: #fff;
   border-radius: 4px;
+  padding: 0.25em 0.5em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.25em 0.5em;
+}
+
+div.guess a.swatch-item .swatch-item__value,
+a.swatch-item:active .swatch-item__value {
+  display: block;
 }
 
 a.thumbnail {

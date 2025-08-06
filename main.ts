@@ -57,6 +57,14 @@ app.get('/croc/:name', async (c) => {
   return c.html(Layout({ content: html }));
 });
 
+// view a crocs page
+app.get('/croc/:name/guess/:colour', async (c) => {
+  const name = `${c.req.param('name')}` 
+  const colour = `${c.req.param('colour')}` 
+  const html = await getCrocPage(name, colour);
+  return c.html(Layout({ content: html }));
+});
+
 // guess a colour for a crocs page
 app.post('/croc/:name', async (c) => {
   const name = `${c.req.param('name')}`
@@ -77,8 +85,9 @@ app.post('/croc/:name', async (c) => {
   const result = await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [name, colour]);
   
   // View the page
-  const html = await getCrocPage(name, colour);
-  return c.html(Layout({ content: html, themeColor: colour }));
+  return c.redirect(`/croc/${name}/guess/${colour.replace('#','')}`)
+  // const html = await getCrocPage(name, colour);
+  // return c.html(Layout({ content: html, themeColor: colour }));
 });
 
 Deno.serve(app.fetch);

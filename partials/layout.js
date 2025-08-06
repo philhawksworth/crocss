@@ -20,7 +20,8 @@ export default function Layout({ content, themeColor }) {
           ${ content }
         </main>
         <footer>
-          <p>hosted by <a href="https://deno.com/deploy">Deno Deploy</a></p>
+          <p>Hosted by <a href="https://deno.com/deploy">Deno Deploy</a></p>
+          <p>Database by <a href="https://neon.com">Neon</a></p>
         </footer>
       </body>
     </html>`
