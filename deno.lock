@@ -79,6 +79,10 @@
       "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
     }
   },
+  "remote": {
+    "https://deno.land/x/lume@v3.0.5/core/utils/lume_config.ts": "3715adca952a4c6054b0f4a25792859ae683a85b11c225b36d027ac26baabe95",
+    "https://deno.land/x/lume@v3.0.5/lint.ts": "4b369361e0cff20a8dfd9e3ff8cb642aa805e7532825ea3a5378eb1f80901fc6"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@hono/hono@^4.8.12"

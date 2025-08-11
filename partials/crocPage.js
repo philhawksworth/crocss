@@ -13,7 +13,7 @@ const swatch = (color) => {
   `
 }
 
-export default function Layout({ content, name, imageUrl, slug, colors, guess }) {
+export default function Layout({ name, imageUrl, slug, colors, guess }) {
   return `
   <h2> This Croc is <span class="croc-name">${ name }</span> but what is its hex value?</h2>
   <div class="hero-image">

@@ -1,4 +1,4 @@
-export default function Layout({ content, themeColor }) {
+export default function Layout({ content }) {
   return `
     <!DOCTYPE html>
     <html lang="en">

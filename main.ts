@@ -18,7 +18,7 @@ await pool.query(`
 `);
 
 
-const listing = (crocs: any[]) => {
+const listing = (crocs: { name: string; slug: string; url: string }[]) => {
   return `
   <section class="crocs-thumbnails">
     ${crocs.map(c => `
@@ -35,8 +35,11 @@ const listing = (crocs: any[]) => {
 // Populate a page for a croc with the colours guessed so far
 const getCrocPage = async (name: string, guess?: string) => {
   const data = crocs.find(c => c.slug === name);
+  if (!data) {
+    throw new Error(`Croc with slug ${name} not found.`);
+  }
   const result = await pool.query("SELECT * FROM entries WHERE path = $1", [name]);
-  const colors = result.rows.map(row => row.color);
+  const colors = result.rows.map((row: { color: string }) => row.color);
   return CrocsPage({ name: data.name, imageUrl: data.url, slug: name, colors: colors, guess: guess });
 }
 
@@ -46,7 +49,7 @@ const getCrocPage = async (name: string, guess?: string) => {
 app.use('/public/*', serveStatic({ root: './' }))
 
 // Home page
-app.get('/', async (c) => {
+app.get('/', (c) => {
   return c.html(Layout({ content: listing(crocs) }));
 })
 
@@ -68,11 +71,10 @@ app.get('/croc/:name/guess/:colour', async (c) => {
 // guess a colour for a crocs page
 app.post('/croc/:name', async (c) => {
   const name = `${c.req.param('name')}`
-  const data = crocs.find(c => c.slug === name);
-
+  
   //insert the colour into the DB
   const body = await c.req.parseBody();
-  let colour = body['colour'];
+  let colour = body['colour'] as string;
   
   // Ensure the colour is a valid hex code
   if (colour.charAt(0) !== '#') {
@@ -82,12 +84,11 @@ app.post('/croc/:name', async (c) => {
     return c.html(Layout({ content: `Invalid colour: ${colour}` }));
   }
 
-  const result = await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [name, colour]);
+  await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [name, colour]);
   
   // View the page
   return c.redirect(`/croc/${name}/guess/${colour.replace('#','')}`)
-  // const html = await getCrocPage(name, colour);
-  // return c.html(Layout({ content: html, themeColor: colour }));
+
 });
 
 Deno.serve(app.fetch);
