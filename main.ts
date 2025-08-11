@@ -4,7 +4,8 @@ import Layout from "./partials/layout.js";
 import CrocsPage from "./partials/crocPage.js";
 
 // API functions for data operations
-import { getAllCrocs, getCrocColors, addCrocColor } from "./api-postgres.ts";
+import { getAllCrocs, getCrocColors, addCrocColor } from "./api-kv.ts"; // Use Deno KV for the database
+// import { getAllCrocs, getCrocColors, addCrocColor } from "./api-postgres.ts"; // Use Postgres for the database
 
 
 const app = new Hono();

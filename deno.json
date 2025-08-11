@@ -6,8 +6,8 @@
   },
   "tasks": {
     "build": "deno run --allow-read --allow-write --env build.ts",
-    "start": "deno run --watch --allow-read --allow-write --allow-net --allow-env  --env main.ts",
-    "serve": "deno run --allow-read --allow-net --allow-env  --env main.ts"
+    "start": "deno run --watch --allow-read --allow-write --allow-net --allow-env --unstable-kv  --env main.ts",
+    "serve": "deno run --allow-read --allow-net --allow-env --unstable-kv  --env main.ts"
   },
   "compilerOptions": {
     "types": [
