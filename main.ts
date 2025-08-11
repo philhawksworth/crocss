@@ -2,20 +2,17 @@ import { Hono } from "hono";
 import { serveStatic } from 'hono/deno'
 import Layout from "./partials/layout.js";
 import CrocsPage from "./partials/crocPage.js";
-import crocs from "./crocs.json" with { type: "json" };
-import { Pool } from "npm:pg";
 
-const pool = new Pool();
+// API functions for data operations
+import { getAllCrocs, getCrocColors, addCrocColor } from "./api-postgres.ts";
+
+
 const app = new Hono();
 
-// Ensure the DB strcutre in all environments is correct
-await pool.query(`
-  CREATE TABLE IF NOT EXISTS entries (
-    id SERIAL PRIMARY KEY,
-    path VARCHAR(100),
-    color VARCHAR(7)
-  )
-`);
+// Get the list of crocs
+const crocs = getAllCrocs();
+
+
 
 
 const listing = (crocs: { name: string; slug: string; url: string }[]) => {
@@ -38,8 +35,9 @@ const getCrocPage = async (name: string, guess?: string) => {
   if (!data) {
     throw new Error(`Croc with slug ${name} not found.`);
   }
-  const result = await pool.query("SELECT * FROM entries WHERE path = $1", [name]);
-  const colors = result.rows.map((row: { color: string }) => row.color);
+
+  // Get the colours guessed so far
+  const colors = await getCrocColors(name);
   return CrocsPage({ name: data.name, imageUrl: data.url, slug: name, colors: colors, guess: guess });
 }
 
@@ -84,7 +82,8 @@ app.post('/croc/:name', async (c) => {
     return c.html(Layout({ content: `Invalid colour: ${colour}` }));
   }
 
-  await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [name, colour]);
+  // save the suggested colour
+  await addCrocColor(name, colour);
   
   // View the page
   return c.redirect(`/croc/${name}/guess/${colour.replace('#','')}`)
