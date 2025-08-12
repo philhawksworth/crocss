@@ -25,3 +25,12 @@ export const addCrocColor = async (slug: string, color: string) => {
   };
   await kv.set(["crocs", a.path], a);
 }
+
+// footer info for the page
+export const footerInfo = () => {
+  return `
+  <p>
+    Database integration provided by <a href="https://deno.com/deploy#kv">Deno KV</a>
+  </p>
+  `
+}

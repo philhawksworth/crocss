@@ -27,3 +27,12 @@ export const getCrocColors = async (slug: string) => {
 export const addCrocColor = async (slug: string, color: string) => {
   await pool.query("INSERT INTO entries (path, color) VALUES ($1, $2)", [slug, color]);
 }
+
+// footer info for the page
+export const footerInfo = () => {
+  return `
+  <p>
+    Database integration provided by <a href="https://neon.com">Neon DB</a>
+  </p>
+  `
+}

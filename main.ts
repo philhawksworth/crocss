@@ -4,8 +4,8 @@ import Layout from "./partials/layout.js";
 import CrocsPage from "./partials/crocPage.js";
 
 // API functions for data operations
-import { getAllCrocs, getCrocColors, addCrocColor } from "./api-kv.ts"; // Use Deno KV for the database
-// import { getAllCrocs, getCrocColors, addCrocColor } from "./api-postgres.ts"; // Use Postgres for the database
+import { getAllCrocs, getCrocColors, addCrocColor, footerInfo } from "./api-kv.ts"; // Use Deno KV for the database
+// import { getAllCrocs, getCrocColors, addCrocColor, footerInfo } from "./api-postgres.ts"; // Use Postgres for the database
 
 
 const app = new Hono();
@@ -49,14 +49,14 @@ app.use('/public/*', serveStatic({ root: './' }))
 
 // Home page
 app.get('/', (c) => {
-  return c.html(Layout({ content: listing(crocs) }));
+  return c.html(Layout({ content: listing(crocs), footer: footerInfo() }));
 })
 
 // view a crocs page
 app.get('/croc/:name', async (c) => {
   const name = `${c.req.param('name')}` 
   const html = await getCrocPage(name);
-  return c.html(Layout({ content: html }));
+  return c.html(Layout({ content: html, footer: footerInfo() }));
 });
 
 // view a crocs page
@@ -64,7 +64,7 @@ app.get('/croc/:name/guess/:colour', async (c) => {
   const name = `${c.req.param('name')}` 
   const colour = `${c.req.param('colour')}` 
   const html = await getCrocPage(name, colour);
-  return c.html(Layout({ content: html }));
+  return c.html(Layout({ content: html, footer: footerInfo() }));
 });
 
 // guess a colour for a crocs page
@@ -80,7 +80,7 @@ app.post('/croc/:name', async (c) => {
     colour = '#' + colour;
   }
   if (!colour.match(/^#([0-9a-fA-F]{6})$/)) {
-    return c.html(Layout({ content: `Invalid colour: ${colour}` }));
+    return c.html(Layout({ content: `Invalid colour: ${colour}`, footer: footerInfo() }));
   }
 
   // save the suggested colour

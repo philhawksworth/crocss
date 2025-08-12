@@ -1,4 +1,4 @@
-export default function Layout({ content }) {
+export default function Layout({ content, footer }) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -21,7 +21,7 @@ export default function Layout({ content }) {
         </main>
         <footer>
           <p>Hosted by <a href="https://deno.com/deploy">Deno Deploy</a></p>
-          <p>Database by <a href="https://neon.com">Neon</a></p>
+          ${ footer }
         </footer>
       </body>
     </html>`

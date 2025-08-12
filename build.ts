@@ -1,4 +1,4 @@
-// generate a data object from all the croccs images
+// generate a data object from all the crocs images
 const imagesDir = `public/images/crocs`;
 const crocs = [];
 for await (const file of Deno.readDir(imagesDir)) {
