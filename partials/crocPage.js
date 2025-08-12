@@ -19,7 +19,7 @@ export default function Layout({ name, imageUrl, slug, colors, guess }) {
   <div class="hero-image">
     <img src="/${ imageUrl }" alt="${ name }" class="crocs-hero-image">  
   </div>
-  ${ guess ? `<p>So you think this Croc's hex code is</p><div class="guess"> ${swatch(guess)}</div><p><a href="/croc/${ slug }">Brag about how close you were</a>, or guess again?</a></p>` : '' }
+  ${ guess ? `<p>So you think this Croc's hex code is</p><div class="guess"> ${swatch(guess)}</div><p>Brag about how close you were by sharing this URL: <br><code>https://crocss.philhawksworth.dev/croc/${ slug }/guess/${ guess }</code></p><p>or guess again?</p>` : '' }
   <form action="/croc/${ slug }" method="post">
       <input type="text" name="colour" id="hex" placeholder="Guess the hex color">
       <button type="submit">Submit</button>
