@@ -68,7 +68,7 @@ app.get("/croc/:name", async (c) => {
 });
 
 // view a crocs page
-app.get("/croc/:name/guess/:colour", async (c) => {
+app.on("GET", ["/croc/:name/guess/:colour", "/croc/:name/is/:colour" ], async (c) => {
   const name = `${c.req.param("name")}`;
   const colour = `${c.req.param("colour")}`;
   const html = await getCrocPage(name, c.req.url, colour);
@@ -77,7 +77,7 @@ app.get("/croc/:name/guess/:colour", async (c) => {
 
 
 // view a crocs page OG image
-app.on("GET", ["/croc/:name/guess/:color/og", "/croc/:name/og"], (c) => {
+app.on("GET", ["/croc/:name/guess/:color/og", "/croc/:name/is/:color/og", "/croc/:name/og"], (c) => {
   const name = `${c.req.param("name")}`;
   const color = `${c.req.param("color")}`;
 

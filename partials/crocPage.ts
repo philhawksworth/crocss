@@ -13,16 +13,19 @@ const swatch = (color: string) => {
 };
 
 export default function Layout({ name, imageUrl, slug, colors, guess, url }: { name: string; imageUrl: string; slug: string; colors: string[]; guess: string | null; url: string }) {
+  
+  const isGuess = url.includes("guess") ? true : false;
+  
   return `
   <h2> This Croc is <span class="croc-name">${name}</span> but what is its hex value?</h2>
   <div class="hero-image">
     <img src="/${imageUrl}" alt="${name}" class="crocs-hero-image">  
   </div>
   ${
-    guess
+    isGuess
       ? `<p>So you think this Croc's hex code is</p><div class="guess"> ${
-        swatch(guess)
-      }</div><p>Brag about how close you were by sharing this URL: <br><code>${url}</code></p><p>or guess again?</p>`
+        guess ? swatch(guess) : ""
+      }</div><p>Brag about how close you were by sharing this URL: <br><code>${url.replace("/guess/", "/is/")}</code></p><p>or guess again?</p>`
       : ""
   }
   <form action="/croc/${slug}" method="post">
