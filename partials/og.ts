@@ -2,9 +2,13 @@
 import { Resvg, ResvgRenderOptions } from "@resvg/resvg-js";
 
 export default (imageUrl: string, color: string) => {
+
+  
+  console.log("color", color);
   if (!color || color === "undefined") {
     color = "000000";
   }
+  console.log("color ->", color);
 
   const svg = `
   <svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
