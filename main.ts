@@ -34,7 +34,7 @@ const listing = (crocs: { name: string; slug: string; url: string }[]) => {
 };
 
 // Populate a page for a croc with the colours guessed so far
-const getCrocPage = async (name: string, guess?: string) => {
+const getCrocPage = async (name: string, url: string, guess?: string,) => {
   const data = crocs.find((c) => c.slug === name);
   if (!data) {
     throw new Error(`Croc with slug ${name} not found.`);
@@ -48,6 +48,7 @@ const getCrocPage = async (name: string, guess?: string) => {
     slug: name,
     colors: colors,
     guess: guess || null,
+    url: url,
   });
 };
 
@@ -62,7 +63,7 @@ app.get("/", (c) => {
 // view a crocs page
 app.get("/croc/:name", async (c) => {
   const name = `${c.req.param("name")}`;
-  const html = await getCrocPage(name);
+  const html = await getCrocPage(name, c.req.url);
   return c.html(Layout({ content: html, url: c.req.url, footer: footerInfo() }));
 });
 
@@ -70,13 +71,13 @@ app.get("/croc/:name", async (c) => {
 app.get("/croc/:name/guess/:colour", async (c) => {
   const name = `${c.req.param("name")}`;
   const colour = `${c.req.param("colour")}`;
-  const html = await getCrocPage(name, colour);
+  const html = await getCrocPage(name, c.req.url, colour);
   return c.html(Layout({ content: html, url: c.req.url, footer: footerInfo() }));
 });
 
 
 // view a crocs page OG image
-app.on("GET", ["/croc/:name/guess/:color/og", "/croc/:name/og"], async (c) => {
+app.on("GET", ["/croc/:name/guess/:color/og", "/croc/:name/og"], (c) => {
   const name = `${c.req.param("name")}`;
   const color = `${c.req.param("color")}`;
 
