@@ -23,7 +23,7 @@ export default (imageUrl: string, color: string) => {
     <g transform="translate(724,104)">
       <path fill="#${color}" d="M217 31c2 2 2 4 0 6l-28 29a5 5 0 0 1-7-6l26-26-26-25a4 4 0 1 1 6-7l29 29ZM5 241H1C13 136 66 83 117 56a238 238 0 0 197-26 268 268 0 0 1 0 9 58 58 0 0 0-8 0l-20 3c-18 3-41 9-65 22-48 25-99 76-111 178l-5-1Z"/>
     </g>
-    <text x="1120" y="200" text-anchor="middle" fill="#fff" font-family="Moranga" font-size="40" font-weight="bold">#${color.toUpperCase()}</text>
+    <text x="1120" y="200" text-anchor="middle" fill="#fff" font-family="Moranga, serif" font-size="40" font-weight="bold">#${color.toUpperCase()}</text>
   </svg>
   `;
 
