@@ -17,8 +17,8 @@ export default function Layout({ content, url, footer }: { content: string; url:
 
         <meta property="og:title" content="Crocss — what's the hex code?" />
         <meta property="og:description" content="Can you guess the hex code for these Crocs?" />
-        <meta property="og:image" content="crocs-og" />
-        <meta property="og:url" content="${url}/og" />
+        <meta property="og:image" content="${url}/og" />
+        <meta property="og:url" content="${url}" />
         <meta property="og:image:alt" content="Can you guess the hex code for these Crocs?">
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Crocss" />
