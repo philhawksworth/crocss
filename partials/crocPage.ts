@@ -1,16 +1,4 @@
-const swatch = (color: string) => {
-  if (color.charAt(0) !== "#") {
-    color = "#" + color;
-  }
-
-  return `
-  <div class="swatch-items">
-    <a class="swatch-item" style="background-color: ${color}">
-      <div class="swatch-item__value">${color}</div>
-    </a>
-  </div>
-  `;
-};
+import swatch from "./swatch.ts";
 
 export default function Layout({ name, imageUrl, slug, colors, guess, url }: { name: string; imageUrl: string; slug: string; colors: string[]; guess: string | null; url: string }) {
   

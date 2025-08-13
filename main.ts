@@ -3,6 +3,7 @@ import { serveStatic } from "hono/deno";
 import Layout from "./partials/layout.ts";
 import CrocsPage from "./partials/crocPage.ts";
 import OG from "./partials/og.ts";
+import swatch from "./partials/swatch.ts";
 
 // API functions for data operations
 import {
@@ -10,6 +11,7 @@ import {
   footerInfo,
   getAllCrocs,
   getCrocColors,
+  getAllGuesses,
 } from "./api-kv.ts"; // Use Deno KV for the database
 // import { getAllCrocs, getCrocColors, addCrocColor, footerInfo } from "./api-postgres.ts"; // Use Postgres for the database
 
@@ -118,5 +120,19 @@ app.post("/croc/:name", async (c) => {
   // View the page
   return c.redirect(`/croc/${name}/guess/${colour.replace("#", "")}`);
 });
+
+// view a crocs page
+app.get("/guesses", async (c) => {
+
+  const guesses = await getAllGuesses();
+  console.log(guesses);
+  const html = `
+  <div class="swatch-items">
+    ${guesses.map((g) => swatch(g)).join("")}
+  </div>
+  `;
+  return c.html(Layout({ content: html, url: c.req.url, footer: footerInfo() }));
+});
+
 
 Deno.serve(app.fetch);

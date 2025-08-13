@@ -28,6 +28,16 @@ export const addCrocColor = async (slug: string, color: string) => {
   await kv.set(["crocs", a.path], a);
 };
 
+// get all guesses
+export const getAllGuesses = async () => {
+  const result = await kv.list<Croc>({ prefix: ["crocs"] });
+  const guesses = [];
+  for await (const entry of result) {
+    guesses.push(...entry.value.colors);
+  }
+  return guesses || [];
+};
+
 // footer info for the page
 export const footerInfo = () => {
   return `
