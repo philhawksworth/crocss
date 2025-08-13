@@ -30,10 +30,12 @@ export default (imageUrl: string, color: string) => {
       value: 1280,
     },
     font: {
-      fontFiles: ['./public/fonts/Moranga-Medium.woff2"'], // Load custom fonts.
       loadSystemFonts: true, // It will be faster to disable loading system fonts.
-      // defaultFontFamily: '', // You can omit this.
+      fontFiles: [`${Deno.cwd()}/public/fonts/Moranga-Medium.woff2`],
+      // fontDirs: ['./public/fonts'],
+      defaultFontFamily: 'serif',
     },
+    logLevel: 'debug', // Default Value: error
   };
   const resvg = new Resvg(svg, opts as ResvgRenderOptions);
   const pngData = resvg.render();
