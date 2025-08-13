@@ -86,7 +86,7 @@ app.on("GET", ["/croc/:name/guess/:color/og", "/croc/:name/og"], (c) => {
   if (!data) {
     throw new Error(`Croc with slug ${name} not found.`);
   }
-  const image = OG(data.url, color);
+  const image = OG(data.url, color, c.req.url);
   return new Response(image, {
     headers: {
       "Content-Type": "image/png",
