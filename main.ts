@@ -126,7 +126,7 @@ app.get("/guesses", async (c) => {
 
   const guesses = await getAllGuesses();
   console.log(guesses);
-  const html = `
+  const html = `<h2>All the guesses</h2>
   <div class="swatch-items">
     ${guesses.map((g) => swatch(g)).join("")}
   </div>

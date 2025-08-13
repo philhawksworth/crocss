@@ -28,6 +28,7 @@ export default function Layout({ content, url, footer }: { content: string; url:
         <header>
           <h1><a href="/">Crocss</a></h1>
           <p>Can you guess the hex code for these Crocs?</p>
+          <p><a href="/guesses">Phew! All the guesses</a></p>
         </header>
         <main>
           ${content}
