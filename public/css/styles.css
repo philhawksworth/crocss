@@ -1,11 +1,11 @@
 body {
   background-color: #fff;
   line-height: 1.5;
-  text-align: center;;
+  text-align: center;
 }
 
 main, header, footer {
-  width: 80%;;
+  width: 80%;
   max-width: 1000px;
   margin: 2em auto;
   padding: 2em 0;
@@ -20,12 +20,10 @@ main {
   padding: 2em 0;
 }
 
-section ,
-section p{
+section,
+section p {
   text-align: center;
 }
-
-
 
 footer {
   border-top: 1px solid #eee;
@@ -39,7 +37,6 @@ h1 {
 h1, h2 {
   line-height: 1.5;
 }
-
 
 .crocs-thumbnails {
   display: flex;
@@ -59,16 +56,15 @@ h1, h2 {
 
 .hero-image {
   width: 100%;
-  height: 50%; 
+  height: 50%;
   overflow: hidden;
 }
 .crocs-hero-image {
   width: 100%;
   height: auto;
-  margin-top: -25%; 
-  margin-bottom: -25%; 
+  margin-top: -25%;
+  margin-bottom: -25%;
 }
-
 
 .swatch-items {
   display: flex;
@@ -111,14 +107,13 @@ a.swatch-item:active .swatch-item__value {
 a.thumbnail {
   width: 15%;
   min-width: 150px;
-  padding: 0 30px 2em;;
-  margin: 5px; 
+  padding: 0 30px 2em;
+  margin: 5px;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   text-align: center;
   color: #000;
   text-decoration: none;
-  
 }
 a.thumbnail:hover {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -141,7 +136,6 @@ form {
   background-color: #fff;
 }
 
-input:not([type=submit]) {
+input:not([type="submit"]) {
   width: 12em;
 }
-
