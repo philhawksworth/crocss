@@ -2,4 +2,4 @@ dist
 _cache
 .DS_Store
 .env
-
+crocs.json

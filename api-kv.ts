@@ -1,5 +1,9 @@
-import { Croc } from "./model.ts";
 import crocs from "./crocs.json" with { type: "json" };
+
+interface Croc {
+  path: string;
+  colors: string[];
+}
 
 const kv = await Deno.openKv();
 
