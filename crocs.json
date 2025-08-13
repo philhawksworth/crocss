@@ -1,237 +1,237 @@
 [
   {
-    "name": "Cork",
-    "slug": "cork",
-    "url": "public/images/crocs/cork.jpg"
-  },
-  {
-    "name": "Rosette",
-    "slug": "rosette",
-    "url": "public/images/crocs/rosette.jpg"
-  },
-  {
-    "name": "Powder Pink",
-    "slug": "powder-pink",
-    "url": "public/images/crocs/powder-pink.jpg"
-  },
-  {
-    "name": "Varsity Red",
-    "slug": "varsity-red",
-    "url": "public/images/crocs/varsity-red.jpg"
-  },
-  {
-    "name": "Papaya",
-    "slug": "papaya",
-    "url": "public/images/crocs/papaya.jpg"
-  },
-  {
-    "name": "Blue Frost",
-    "slug": "blue-frost",
-    "url": "public/images/crocs/blue-frost.jpg"
-  },
-  {
-    "name": "Coffee",
-    "slug": "coffee",
-    "url": "public/images/crocs/coffee.jpg"
-  },
-  {
-    "name": "Starfish",
-    "slug": "starfish",
-    "url": "public/images/crocs/starfish.jpg"
-  },
-  {
-    "name": "Taffy Pink",
-    "slug": "taffy-pink",
-    "url": "public/images/crocs/taffy-pink.jpg"
-  },
-  {
-    "name": "Elephant",
-    "slug": "elephant",
-    "url": "public/images/crocs/elephant.jpg"
-  },
-  {
-    "name": "Atmosphere",
-    "slug": "atmosphere",
-    "url": "public/images/crocs/atmosphere.jpg"
-  },
-  {
-    "name": "Wheat",
-    "slug": "wheat",
-    "url": "public/images/crocs/wheat.jpg"
-  },
-  {
-    "name": "Bright Cobalt",
-    "slug": "bright-cobalt",
-    "url": "public/images/crocs/bright-cobalt.jpg"
-  },
-  {
-    "name": "Stucco",
-    "slug": "stucco",
-    "url": "public/images/crocs/stucco.jpg"
-  },
-  {
-    "name": "Orange Zing",
-    "slug": "orange-zing",
-    "url": "public/images/crocs/orange-zing.jpg"
-  },
-  {
-    "name": "Frosted Grape",
-    "slug": "frosted-grape",
-    "url": "public/images/crocs/frosted-grape.jpg"
-  },
-  {
-    "name": "Rust",
-    "slug": "rust",
-    "url": "public/images/crocs/rust.jpg"
-  },
-  {
-    "name": "Black",
-    "slug": "black",
-    "url": "public/images/crocs/black.jpg"
-  },
-  {
-    "name": "Blue Bolt",
-    "slug": "blue-bolt",
-    "url": "public/images/crocs/blue-bolt.jpg"
-  },
-  {
-    "name": "Pink Milk",
-    "slug": "pink-milk",
-    "url": "public/images/crocs/pink-milk.jpg"
-  },
-  {
-    "name": "Lavender",
-    "slug": "lavender",
-    "url": "public/images/crocs/lavender.jpg"
-  },
-  {
-    "name": "Mystic Purple",
-    "slug": "mystic-purple",
-    "url": "public/images/crocs/mystic-purple.jpg"
-  },
-  {
-    "name": "Pond",
-    "slug": "pond",
-    "url": "public/images/crocs/pond.jpg"
-  },
-  {
-    "name": "Strawberry Wine",
-    "slug": "strawberry-wine",
-    "url": "public/images/crocs/strawberry-wine.jpg"
-  },
-  {
-    "name": "Hydrangea",
-    "slug": "hydrangea",
-    "url": "public/images/crocs/hydrangea.jpg"
-  },
-  {
-    "name": "Nightshade",
-    "slug": "nightshade",
-    "url": "public/images/crocs/nightshade.jpg"
-  },
-  {
-    "name": "Marina",
-    "slug": "marina",
-    "url": "public/images/crocs/marina.jpg"
-  },
-  {
-    "name": "Turmeric",
-    "slug": "turmeric",
-    "url": "public/images/crocs/turmeric.jpg"
-  },
-  {
-    "name": "Latte",
-    "slug": "latte",
-    "url": "public/images/crocs/latte.jpg"
-  },
-  {
-    "name": "Dragon Fruit",
-    "slug": "dragon-fruit",
-    "url": "public/images/crocs/dragon-fruit.jpg"
-  },
-  {
-    "name": "Quartz",
-    "slug": "quartz",
-    "url": "public/images/crocs/quartz.jpg"
-  },
-  {
-    "name": "Linen",
-    "slug": "linen",
-    "url": "public/images/crocs/linen.jpg"
-  },
-  {
-    "name": "Bone",
-    "slug": "bone",
-    "url": "public/images/crocs/bone.jpg"
-  },
-  {
-    "name": "Slate Grey",
-    "slug": "slate-grey",
-    "url": "public/images/crocs/slate-grey.jpg"
-  },
-  {
-    "name": "Pink Tweed",
-    "slug": "pink-tweed",
-    "url": "public/images/crocs/pink-tweed.jpg"
-  },
-  {
-    "name": "Golden Hour",
-    "slug": "golden-hour",
-    "url": "public/images/crocs/golden-hour.jpg"
+    "name": "Milk Chocolate",
+    "slug": "milk-chocolate",
+    "url": "public/images/crocs/milk-chocolate.webp"
   },
   {
     "name": "Navy",
     "slug": "navy",
-    "url": "public/images/crocs/navy.jpg"
+    "url": "public/images/crocs/navy.webp"
   },
   {
-    "name": "Milk Chocolate",
-    "slug": "milk-chocolate",
-    "url": "public/images/crocs/milk-chocolate.jpg"
+    "name": "Powder Pink",
+    "slug": "powder-pink",
+    "url": "public/images/crocs/powder-pink.webp"
   },
   {
-    "name": "Pink Crush",
-    "slug": "pink-crush",
-    "url": "public/images/crocs/pink-crush.jpg"
+    "name": "Wheat",
+    "slug": "wheat",
+    "url": "public/images/crocs/wheat.webp"
   },
   {
-    "name": "Mint Tint",
-    "slug": "mint-tint",
-    "url": "public/images/crocs/mint-tint.jpg"
+    "name": "Papaya",
+    "slug": "papaya",
+    "url": "public/images/crocs/papaya.webp"
+  },
+  {
+    "name": "Marina",
+    "slug": "marina",
+    "url": "public/images/crocs/marina.webp"
+  },
+  {
+    "name": "Bone",
+    "slug": "bone",
+    "url": "public/images/crocs/bone.webp"
+  },
+  {
+    "name": "Taffy Pink",
+    "slug": "taffy-pink",
+    "url": "public/images/crocs/taffy-pink.webp"
   },
   {
     "name": "Moon Jelly",
     "slug": "moon-jelly",
-    "url": "public/images/crocs/moon-jelly.jpg"
+    "url": "public/images/crocs/moon-jelly.webp"
   },
   {
-    "name": "Desert Grass",
-    "slug": "desert-grass",
-    "url": "public/images/crocs/desert-grass.jpg"
+    "name": "Quartz",
+    "slug": "quartz",
+    "url": "public/images/crocs/quartz.webp"
   },
   {
-    "name": "Moss",
-    "slug": "moss",
-    "url": "public/images/crocs/moss.jpg"
+    "name": "Blue Frost",
+    "slug": "blue-frost",
+    "url": "public/images/crocs/blue-frost.webp"
   },
   {
-    "name": "White",
-    "slug": "white",
-    "url": "public/images/crocs/white.jpg"
+    "name": "Rust",
+    "slug": "rust",
+    "url": "public/images/crocs/rust.webp"
   },
   {
-    "name": "Army Green",
-    "slug": "army-green",
-    "url": "public/images/crocs/army-green.jpg"
+    "name": "Orange Zing",
+    "slug": "orange-zing",
+    "url": "public/images/crocs/orange-zing.webp"
   },
   {
-    "name": "Cognac",
-    "slug": "cognac",
-    "url": "public/images/crocs/cognac.jpg"
+    "name": "Elephant",
+    "slug": "elephant",
+    "url": "public/images/crocs/elephant.webp"
   },
   {
     "name": "Cyber Yellow",
     "slug": "cyber-yellow",
-    "url": "public/images/crocs/cyber-yellow.jpg"
+    "url": "public/images/crocs/cyber-yellow.webp"
+  },
+  {
+    "name": "Moss",
+    "slug": "moss",
+    "url": "public/images/crocs/moss.webp"
+  },
+  {
+    "name": "Golden Hour",
+    "slug": "golden-hour",
+    "url": "public/images/crocs/golden-hour.webp"
+  },
+  {
+    "name": "Hydrangea",
+    "slug": "hydrangea",
+    "url": "public/images/crocs/hydrangea.webp"
+  },
+  {
+    "name": "White",
+    "slug": "white",
+    "url": "public/images/crocs/white.webp"
+  },
+  {
+    "name": "Latte",
+    "slug": "latte",
+    "url": "public/images/crocs/latte.webp"
+  },
+  {
+    "name": "Pink Tweed",
+    "slug": "pink-tweed",
+    "url": "public/images/crocs/pink-tweed.webp"
+  },
+  {
+    "name": "Frosted Grape",
+    "slug": "frosted-grape",
+    "url": "public/images/crocs/frosted-grape.webp"
+  },
+  {
+    "name": "Turmeric",
+    "slug": "turmeric",
+    "url": "public/images/crocs/turmeric.webp"
+  },
+  {
+    "name": "Stucco",
+    "slug": "stucco",
+    "url": "public/images/crocs/stucco.webp"
+  },
+  {
+    "name": "Cognac",
+    "slug": "cognac",
+    "url": "public/images/crocs/cognac.webp"
+  },
+  {
+    "name": "Varsity Red",
+    "slug": "varsity-red",
+    "url": "public/images/crocs/varsity-red.webp"
+  },
+  {
+    "name": "Army Green",
+    "slug": "army-green",
+    "url": "public/images/crocs/army-green.webp"
+  },
+  {
+    "name": "Pond",
+    "slug": "pond",
+    "url": "public/images/crocs/pond.webp"
+  },
+  {
+    "name": "Mystic Purple",
+    "slug": "mystic-purple",
+    "url": "public/images/crocs/mystic-purple.webp"
+  },
+  {
+    "name": "Desert Grass",
+    "slug": "desert-grass",
+    "url": "public/images/crocs/desert-grass.webp"
+  },
+  {
+    "name": "Slate Grey",
+    "slug": "slate-grey",
+    "url": "public/images/crocs/slate-grey.webp"
+  },
+  {
+    "name": "Cork",
+    "slug": "cork",
+    "url": "public/images/crocs/cork.webp"
+  },
+  {
+    "name": "Dragon Fruit",
+    "slug": "dragon-fruit",
+    "url": "public/images/crocs/dragon-fruit.webp"
+  },
+  {
+    "name": "Atmosphere",
+    "slug": "atmosphere",
+    "url": "public/images/crocs/atmosphere.webp"
+  },
+  {
+    "name": "Coffee",
+    "slug": "coffee",
+    "url": "public/images/crocs/coffee.webp"
+  },
+  {
+    "name": "Lavender",
+    "slug": "lavender",
+    "url": "public/images/crocs/lavender.webp"
+  },
+  {
+    "name": "Black",
+    "slug": "black",
+    "url": "public/images/crocs/black.webp"
+  },
+  {
+    "name": "Pink Milk",
+    "slug": "pink-milk",
+    "url": "public/images/crocs/pink-milk.webp"
+  },
+  {
+    "name": "Rosette",
+    "slug": "rosette",
+    "url": "public/images/crocs/rosette.webp"
+  },
+  {
+    "name": "Nightshade",
+    "slug": "nightshade",
+    "url": "public/images/crocs/nightshade.webp"
+  },
+  {
+    "name": "Pink Crush",
+    "slug": "pink-crush",
+    "url": "public/images/crocs/pink-crush.webp"
+  },
+  {
+    "name": "Linen",
+    "slug": "linen",
+    "url": "public/images/crocs/linen.webp"
+  },
+  {
+    "name": "Blue Bolt",
+    "slug": "blue-bolt",
+    "url": "public/images/crocs/blue-bolt.webp"
+  },
+  {
+    "name": "Starfish",
+    "slug": "starfish",
+    "url": "public/images/crocs/starfish.webp"
+  },
+  {
+    "name": "Strawberry Wine",
+    "slug": "strawberry-wine",
+    "url": "public/images/crocs/strawberry-wine.webp"
+  },
+  {
+    "name": "Bright Cobalt",
+    "slug": "bright-cobalt",
+    "url": "public/images/crocs/bright-cobalt.webp"
+  },
+  {
+    "name": "Mint Tint",
+    "slug": "mint-tint",
+    "url": "public/images/crocs/mint-tint.webp"
   }
 ]
