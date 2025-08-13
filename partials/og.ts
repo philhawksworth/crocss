@@ -14,7 +14,7 @@ export default (imageUrl: string, color: string) => {
   <svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       <style type="text/css">
-          @import url('./public/fonts/Moranga-Medium.woff2');
+          @import url('/public/fonts/Moranga-Medium.woff2');
       </style>
     </defs>
     <rect fill="#${color}" x="965" y="0" width="315" height="720"></rect>
