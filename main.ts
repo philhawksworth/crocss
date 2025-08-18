@@ -21,6 +21,7 @@ const app = new Hono();
 const crocs = getAllCrocs();
 
 const listing = (crocs: { name: string; slug: string; url: string }[]) => {
+
   return `
   <section class="crocs-thumbnails">
     ${
@@ -58,7 +59,7 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
 app.use("/public/*", serveStatic({ root: "./" }));
 
 // Home page
-app.get("/", (c) => {
+app.get("/",  (c) => {
   return c.html(Layout({ content: listing(crocs), url: c.req.url, footer: footerInfo() }));
 });
 

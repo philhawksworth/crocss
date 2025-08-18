@@ -7,6 +7,7 @@ body {
 main, header, footer {
   width: 80%;
   max-width: 1000px;
+  min-width: 300px;
   margin: 2em auto;
   padding: 2em 0;
 }
@@ -38,6 +39,7 @@ h1, h2 {
   line-height: 1.5;
 }
 
+
 .crocs-thumbnails {
   display: flex;
   flex-wrap: wrap;
@@ -60,10 +62,11 @@ h1, h2 {
   overflow: hidden;
 }
 .crocs-hero-image {
-  width: 100%;
+  width: 60%;
+  min-width: 200px;
   height: auto;
-  margin-top: -25%;
-  margin-bottom: -25%;
+  margin-top: -10%;
+  margin-bottom: -10%;
 }
 
 .swatch-items {
@@ -106,14 +109,15 @@ a.swatch-item:active .swatch-item__value {
 
 a.thumbnail {
   width: 15%;
-  min-width: 150px;
+  min-width: 180px;
   padding: 0 30px 2em;
-  margin: 5px;
+  /* margin: 5px; */
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   text-align: center;
   color: #000;
   text-decoration: none;
+  border: 1px solid #00000066;
 }
 a.thumbnail:hover {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
