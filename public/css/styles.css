@@ -2,12 +2,12 @@ body {
   background-color: #fff;
   line-height: 1.5;
   text-align: center;
+  font-size: var(--step-1);
 }
 
 main, header, footer {
   width: 80%;
-  max-width: 1000px;
-  min-width: 300px;
+  max-width: 1200px;
   margin: 2em auto;
   padding: 2em 0;
 }
@@ -21,6 +21,16 @@ main {
   padding: 2em 0;
 }
 
+main section {
+ max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  main, header, footer {
+    width: 100%;
+  }
+}
+
 section,
 section p {
   text-align: center;
@@ -32,7 +42,7 @@ footer {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: var(--step-6);
   margin-bottom: 0;
 }
 h1, h2 {
@@ -46,7 +56,7 @@ h1, h2 {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+;
 }
 
 .croc-name {
@@ -99,7 +109,6 @@ a.swatch-item .swatch-item__value {
   padding: 0.25em 0.5em;
   font-weight: bold;
   margin: 0;
-  padding: 0.25em 0.5em;
 }
 
 div.guess a.swatch-item .swatch-item__value,
@@ -109,15 +118,14 @@ a.swatch-item:active .swatch-item__value {
 
 a.thumbnail {
   width: 15%;
-  min-width: 180px;
-  padding: 0 30px 2em;
-  /* margin: 5px; */
+  min-width: 10em;
+  padding: 1rem 30px 2em;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   text-align: center;
   color: #000;
   text-decoration: none;
-  border: 1px solid #00000066;
+  border: 1px solid #00000099;
 }
 a.thumbnail:hover {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -129,11 +137,12 @@ a.thumbnail img {
 }
 
 a.thumbnail h2 {
-  font-size: 0.8rem;
+  font-size: var(--step-0);
+  white-space: nowrap;
   font-weight: 400;
   margin: 0;
   padding: 0;
-  margin-top: -1rem;
+  margin: -1em auto -1rem;
 }
 
 form {
