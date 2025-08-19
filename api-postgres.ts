@@ -17,12 +17,18 @@ export const getAllCrocs = () => {
   return crocs;
 };
 
+// get all guesses
+export const getAllGuesses = async () => {
+  const result = await pool.query("SELECT * FROM entries ");
+  return result.rows.map((row: { color?: string }) => row.color || "#000000"); 
+};
+
 // get the colours suggested for a given pair of crocs
 export const getCrocColors = async (slug: string) => {
   const result = await pool.query("SELECT * FROM entries WHERE path = $1", [
     slug,
   ]);
-  return result.rows.map((row: { color: string }) => row.color);
+  return result.rows.map((row: { color: string }) => row.color || "#000000");
 };
 
 // insert a colour for a given pair of crocs
@@ -32,6 +38,7 @@ export const addCrocColor = async (slug: string, color: string) => {
     color,
   ]);
 };
+
 
 // footer info for the page
 export const footerInfo = () => {

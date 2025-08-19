@@ -13,7 +13,14 @@ import {
   getCrocColors,
   getAllGuesses,
 } from "./api-kv.ts"; // Use Deno KV for the database
-// import { getAllCrocs, getCrocColors, addCrocColor, footerInfo } from "./api-postgres.ts"; // Use Postgres for the database
+// import {
+//   addCrocColor,
+//   footerInfo,
+//   getAllCrocs,
+//   getCrocColors,
+//   getAllGuesses,
+// } from "./api-postgres.ts"; // Use Postgres for the database
+
 
 const app = new Hono();
 
@@ -126,6 +133,9 @@ app.post("/croc/:name", async (c) => {
 app.get("/guesses", async (c) => {
 
   const guesses = await getAllGuesses();
+
+
+
   const html = `<h2>All the guesses</h2>
   <div class="swatch-items">
     ${guesses.map((g) => swatch(g)).join("")}
