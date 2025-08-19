@@ -2,8 +2,6 @@
   "imports": {
     "@resvg/resvg-js": "npm:@resvg/resvg-js@^2.6.2",
     "hono": "jsr:@hono/hono@^4.8.12",
-    "lume/": "https://deno.land/x/lume@v3.0.5/",
-    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.11/jsx-runtime.ts",
     "satori": "npm:satori@^0.16.2"
   },
   "tasks": {
@@ -12,19 +10,10 @@
     "serve": "deno run --allow-read --allow-net --allow-env --unstable-kv --allow-ffi --env main.ts"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "lume"
+    "jsx": "react-jsx"
   },
   "unstable": [
     "temporal",
     "fmt-component"
-  ],
-  "lint": {
-    "plugins": [
-      "https://deno.land/x/lume@v3.0.5/lint.ts"
-    ]
-  }
+  ]
 }

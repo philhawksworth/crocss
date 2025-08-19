@@ -35,9 +35,23 @@ export default function Layout({ content, url, footer }: { content: string; url:
           ${content}
         </main>
         <footer>
+          
           <p>Hosted by <a href="https://deno.com/deploy">Deno Deploy</a></p>
           ${footer}
+
+          <p>
+            Clone <a href=" https://github.com/philhawksworth/crocss">this repo</a> as an example to play with on Deno Deploy by clicking the button below.
+          </p>
+          <p>
+            <a href="https://app.deno.com/new?clone=https://github.com/philhawksworth/crocss&build=deno%20task%20build&entrypoint=main.ts">
+              <img eleventy:ignore src="https://deno.com/button" alt="Deploy on Deno Deploy">
+            </a>
+          </p>
+        
         </footer>
+
+
+        
       </body>
     </html>`;
 }
