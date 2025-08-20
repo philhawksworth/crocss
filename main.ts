@@ -133,12 +133,9 @@ app.post("/croc/:name", async (c) => {
 app.get("/guesses", async (c) => {
 
   const guesses = await getAllGuesses();
-
-
-
   const html = `<h2>All the guesses</h2>
   <div class="swatch-items">
-    ${guesses.map((g) => swatch(g)).join("")}
+    ${guesses.sort(() => Math.random() - 0.5).map((g) => swatch(g)).join("")}
   </div>
   `;
   return c.html(Layout({ content: html, url: c.req.url, footer: footerInfo() }));
