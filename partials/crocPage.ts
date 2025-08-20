@@ -25,7 +25,7 @@ export default function Layout({ name, imageUrl, slug, colors, guess, url }: { n
     colors.length > 0 ? `<p><em>Click to peek at a previous guess</em></p>` : ""
   }
     <div class="swatch-items">
-      ${colors.map(swatch).join("")}
+      ${ colors.sort(() => Math.random() - 0.5).map(swatch).join("") }
     </div>
   </section>`;
 }
