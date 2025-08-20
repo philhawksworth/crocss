@@ -35,4 +35,4 @@ import {
 
 You can clone this repo and use your copy as the source for a new site on Deno Deploy, all with a few clicks, starting by clicking the button below. You'll need to have an account on Deno Deploy and an organisation created to use Deploy EA (available for free). Clicking the button will guide you through.
 
-[![Deploy on Deno](https://deno.com/button)](https://app.deno.com/new?clone=https://github.com/philhawksworth/crocss&build=deno%20task%20build&entrypoint=main.ts&mode=dynamic&args=--allow-read --allow-net --allow-env --unstable-kv --allow-ffi)
+[![Deploy on Deno](https://deno.com/button)](https://app.deno.com/new?clone=https://github.com/philhawksworth/crocss&build=deno%20task%20build&entrypoint=main.ts&mode=dynamic&args=--allow-read%20--allow-net%20--allow-env%20--unstable-kv%20--allow-ffi)
