@@ -8,24 +8,6 @@ interface Croc {
 const kv = await Deno.openKv();
 
 
-// clean up some mess
-const result = await kv.list<Croc>({ prefix: ["crocs"] });
-for await (const entry of result) {
-  
-{
-  entry.value.colors = entry.value.colors.filter((color) => color !== "#ffffff");
-  entry.value.colors = entry.value.colors.filter((color) => color !== "#000000");
-
-  const a: Croc = {
-    path: entry.value.path,
-    colors: entry.value.colors,
-  };
-  await kv.set(["crocs", a.path], a);
-
-}}
-
-
-
 // return our known list of crocs
 export const getAllCrocs = () => {
   return crocs;
