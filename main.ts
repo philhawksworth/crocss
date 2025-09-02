@@ -60,17 +60,19 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
     colors: colors,
     guess: guess || null,
     url: url,
-  });
+  }); 
 };
 
 // caching on static assets
 app.get(
   '/public/css/styles.css?v=*',
-  cache({
+    cache({
     cacheName: 'crocss-static-assets',
-    cacheControl: 'immutable'
+    cacheControl: 'immutable',
+    wait: true,
   })
 )
+
 
 // Static assets
 app.use("/public/*", serveStatic({ root: "./" }));
