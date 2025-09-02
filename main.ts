@@ -13,6 +13,7 @@ import {
   getCrocColors,
   getAllGuesses,
 } from "./api-kv.ts"; // Use Deno KV for the database
+
 // import {
 //   addCrocColor,
 //   footerInfo,
@@ -59,11 +60,23 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
     colors: colors,
     guess: guess || null,
     url: url,
-  });
+  }); 
 };
+
+// caching on static assets
+app.use("/public/*", async (c, next) => {
+  await next();
+  let cacheControl= "public, max-age=86400"; // 1 day
+  if (c.req.url.includes("?v="))  {
+    cacheControl= "public, max-age=31536000, immutable"; 
+  }
+  c.header('Cache-Control', cacheControl);
+})
 
 // Static assets
 app.use("/public/*", serveStatic({ root: "./" }));
+
+
 
 // Home page
 app.get("/",  (c) => {
