@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cache } from 'hono/cache'
 import { serveStatic } from "hono/deno";
 import Layout from "./partials/layout.ts";
 import CrocsPage from "./partials/crocPage.ts";
@@ -64,6 +65,16 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
 
 // Static assets
 app.use("/public/*", serveStatic({ root: "./" }));
+
+// caching on static assets
+app.get(
+  '/public/css/styles.css?v=*',
+  cache({
+    cacheName: 'crocss-static-assets',
+    cacheControl: 'immutable'
+  })
+)
+
 
 // Home page
 app.get("/",  (c) => {
