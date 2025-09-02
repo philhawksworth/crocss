@@ -64,15 +64,14 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
 };
 
 // caching on static assets
-app.get(
-  '/public/css/styles.css?v=*',
-    cache({
-    cacheName: 'crocss-static-assets',
-    cacheControl: 'immutable',
-    wait: true,
-  })
-)
-
+app.use("/public/*", async (c, next) => {
+  await next();
+  let cacheControl= "max-age=86400"; // 1 day
+  if (c.req.path.includes("public/css/styles.css?v="))  {
+    cacheControl= "immutable"; 
+  }
+  c.header('Cache-Control', cacheControl);
+})
 
 // Static assets
 app.use("/public/*", serveStatic({ root: "./" }));
