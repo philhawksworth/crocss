@@ -63,9 +63,6 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
   });
 };
 
-// Static assets
-app.use("/public/*", serveStatic({ root: "./" }));
-
 // caching on static assets
 app.get(
   '/public/css/styles.css?v=*',
@@ -74,6 +71,10 @@ app.get(
     cacheControl: 'immutable'
   })
 )
+
+// Static assets
+app.use("/public/*", serveStatic({ root: "./" }));
+
 
 
 // Home page
