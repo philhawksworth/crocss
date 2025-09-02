@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { cache } from 'hono/cache'
 import { serveStatic } from "hono/deno";
 import Layout from "./partials/layout.ts";
 import CrocsPage from "./partials/crocPage.ts";
@@ -14,6 +13,7 @@ import {
   getCrocColors,
   getAllGuesses,
 } from "./api-kv.ts"; // Use Deno KV for the database
+
 // import {
 //   addCrocColor,
 //   footerInfo,
@@ -67,7 +67,7 @@ const getCrocPage = async (name: string, url: string, guess?: string,) => {
 app.use("/public/*", async (c, next) => {
   await next();
   let cacheControl= "public, max-age=86400"; // 1 day
-  if (c.req.path.includes("public/css/styles.css?v="))  {
+  if (c.req.url.includes("?v="))  {
     cacheControl= "public, max-age=31536000, immutable"; 
   }
   c.header('Cache-Control', cacheControl);
