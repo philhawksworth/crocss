@@ -2,6 +2,8 @@ export default function Layout({ content, url, footer }: { content: string; url:
 
   const fingerprint = Deno.env.get('DENO_DEPLOY_REVISION_ID') || null;
 
+  console.log(`DENO_DEPLOY_REVISION_ID:  ${Deno.env.get('DENO_DEPLOY_REVISION_ID')}`);
+
   return `
     <!DOCTYPE html>
     <html lang="en">
